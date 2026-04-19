@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Backend-Engine-EEE": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
