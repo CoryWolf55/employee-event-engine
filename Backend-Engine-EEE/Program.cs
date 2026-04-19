@@ -1,4 +1,7 @@
-﻿Console.WriteLine("Hello, World!");
+﻿using Backend_Engine_EEE;
+
+LocalDB db = new LocalDB();
+Console.WriteLine("Hello, World!");
 
 
 //Plan - 
@@ -35,12 +38,61 @@ static void AdminFunc()
 {
     Console.WriteLine("Admin functions will be implemented here.");
     // Implement admin functionalities such as onboarding, offboarding, and report generation.
+
+    Console.WriteLine("Please select an admin function:");
+    Console.WriteLine("1. Onboard Employee");
+    Console.WriteLine("2. Search Employee");
+    Console.WriteLine("3. Exit");
+
+    int response = int.Parse(Console.ReadLine());
+    switch(response)
+    {
+        case 1:
+            Console.WriteLine("Onboarding Employee...");
+            // Implement onboarding logic here.
+            break;
+        case 2:
+            Console.WriteLine("Searching Employee...");
+            // Implement employee search logic here.
+            break;
+        case 3:
+            Console.WriteLine("Exiting Admin functions.");
+            break;
+        default:
+            Console.WriteLine("Invalid option. Please try again.");
+            break;
+    }
 }
 
 static void EmployeeFunc()
 {
     Console.WriteLine("Employee functions will be implemented here.");
     // Implement employee functionalities such as clocking in, clocking out, and viewing hours worked.
+
+    Console.WriteLine("Please Enter your employee ID: ");
+    int id = int.Parse(Console.ReadLine());
+
+    if(!CheckEmployeeLogin(id))
+    {
+        Console.WriteLine("Invalid employee ID. Please try again.");
+        return;
+    }
+}
+
+
+static bool CheckEmployeeLogin( int EmployeeId)
+{
+    //Check ID to db
+    Employee employee = db.Employees.Where(e => e.EmployeeId == id).FirstOrDefault();
+    if (employee == null)
+    {
+        return false;
+    }
+    
+     Console.WriteLine($"Welcome {employee.Name}!");
+    // Implement clock in, clock out, and hours tracking for the employee.
+    return true;
+    
 }
 
 
