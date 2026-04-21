@@ -66,7 +66,7 @@ namespace Backend_Engine_EEE
             int chosenId;
             do
             {
-                chosenId = rnd.Next(100000);
+                chosenId = rnd.Next(100000); //Max ID -> 99999
             } while (existingIds.Contains(chosenId));
 
             //Setting it in DB
@@ -77,6 +77,34 @@ namespace Backend_Engine_EEE
         private static void ManageEmployee(Employee e)
         {
             Console.WriteLine("You are managing: " +  e.Name + " " + e.EmployeeId);
+            Console.WriteLine("What would you like to do?: ");
+            Console.WriteLine("1: Check Report");
+            Console.WriteLine("2: Offboard Employee");
+            Console.WriteLine("3: Exit");
+
+            switch(Console.ReadLine()) {
+                case "1": 
+                    Console.WriteLine("Getting Report");
+                    GrabReport(e);
+                    break;
+                case "2":
+                    Console.WriteLine("Offboarding Employee");
+                    LocalDB.Employees.Remove(e); //Temp
+                    break;
+                case "3":
+                    Console.WriteLine("Exiting...");
+                    break;
+                default:
+                    Console.WriteLine("Invalid");
+                    break;
+            }
+               
+
+        }
+
+        static void GrabReport(Employee e)
+        {
+            //Returning report for 
         }
 
 

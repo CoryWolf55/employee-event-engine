@@ -11,7 +11,8 @@ namespace Backend_Engine_EEE
             //1. Create an employee tracking system. This should allow onboarding, offboarding,
             // Clock in, Clock out, and tracking of hours worked. It should also allow for
             // the generation of reports on employee hours and attendance.
-
+            bool active = true;
+            while(active) {
             Console.WriteLine("Welcome to the Employee Tracking System!");
             Console.WriteLine("Please select an option:");
             Console.WriteLine("1. Admin");
@@ -31,12 +32,13 @@ namespace Backend_Engine_EEE
                     break;
                 case "3":
                     Console.WriteLine("Exiting the system. Goodbye!");
+                    active = false;
                     break;
                 default:
                     Console.WriteLine("Invalid option. Please try again.");
                     break;
             }
-
+            }
         }
 
         static void AdminFunc()

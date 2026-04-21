@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Backend-Engine-EEE")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb2c07d5490611a446950d0b3c442931454d6445")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2df7a6172a4a9a59fc516bc55334f1b2108f7f93")]
 [assembly: System.Reflection.AssemblyProductAttribute("Backend-Engine-EEE")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Backend-Engine-EEE")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
