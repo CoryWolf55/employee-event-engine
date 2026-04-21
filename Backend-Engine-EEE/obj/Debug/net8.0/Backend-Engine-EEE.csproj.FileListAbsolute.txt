@@ -1,18 +1,15 @@
-C:\Users\Cory\GitHub Projects\employee-event-engine\Backend-Engine-EEE\bin\Debug\net8.0\Backend-Engine-EEE.exe
-C:\Users\Cory\GitHub Projects\employee-event-engine\Backend-Engine-EEE\bin\Debug\net8.0\Backend-Engine-EEE.deps.json
-C:\Users\Cory\GitHub Projects\employee-event-engine\Backend-Engine-EEE\bin\Debug\net8.0\Backend-Engine-EEE.runtimeconfig.json
-C:\Users\Cory\GitHub Projects\employee-event-engine\Backend-Engine-EEE\bin\Debug\net8.0\Backend-Engine-EEE.dll
-C:\Users\Cory\GitHub Projects\employee-event-engine\Backend-Engine-EEE\bin\Debug\net8.0\Backend-Engine-EEE.pdb
-C:\Users\Cory\GitHub Projects\employee-event-engine\Backend-Engine-EEE\obj\Debug\net8.0\Backend-Engine-EEE.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Cory\GitHub Projects\employee-event-engine\Backend-Engine-EEE\obj\Debug\net8.0\Backend-Engine-EEE.AssemblyInfoInputs.cache
-C:\Users\Cory\GitHub Projects\employee-event-engine\Backend-Engine-EEE\obj\Debug\net8.0\Backend-Engine-EEE.AssemblyInfo.cs
-C:\Users\Cory\GitHub Projects\employee-event-engine\Backend-Engine-EEE\obj\Debug\net8.0\Backend-Engine-EEE.csproj.CoreCompileInputs.cache
-C:\Users\Cory\GitHub Projects\employee-event-engine\Backend-Engine-EEE\obj\Debug\net8.0\Backend-Engine-EEE.dll
-C:\Users\Cory\GitHub Projects\employee-event-engine\Backend-Engine-EEE\obj\Debug\net8.0\refint\Backend-Engine-EEE.dll
-C:\Users\Cory\GitHub Projects\employee-event-engine\Backend-Engine-EEE\obj\Debug\net8.0\Backend-Engine-EEE.pdb
-C:\Users\Cory\GitHub Projects\employee-event-engine\Backend-Engine-EEE\obj\Debug\net8.0\Backend-Engine-EEE.genruntimeconfig.cache
-C:\Users\Cory\GitHub Projects\employee-event-engine\Backend-Engine-EEE\obj\Debug\net8.0\ref\Backend-Engine-EEE.dll
+C:\Users\Coryw\Github-Projects\employee-event-engine\Backend-Engine-EEE\bin\Debug\net8.0\Backend-Engine-EEE.exe
+C:\Users\Coryw\Github-Projects\employee-event-engine\Backend-Engine-EEE\bin\Debug\net8.0\Backend-Engine-EEE.deps.json
+C:\Users\Coryw\Github-Projects\employee-event-engine\Backend-Engine-EEE\bin\Debug\net8.0\Backend-Engine-EEE.runtimeconfig.json
+C:\Users\Coryw\Github-Projects\employee-event-engine\Backend-Engine-EEE\bin\Debug\net8.0\Backend-Engine-EEE.dll
+C:\Users\Coryw\Github-Projects\employee-event-engine\Backend-Engine-EEE\bin\Debug\net8.0\Backend-Engine-EEE.pdb
+C:\Users\Coryw\Github-Projects\employee-event-engine\Backend-Engine-EEE\obj\Debug\net8.0\Backend-Engine-EEE.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Coryw\Github-Projects\employee-event-engine\Backend-Engine-EEE\obj\Debug\net8.0\Backend-Engine-EEE.AssemblyInfoInputs.cache
+C:\Users\Coryw\Github-Projects\employee-event-engine\Backend-Engine-EEE\obj\Debug\net8.0\Backend-Engine-EEE.AssemblyInfo.cs
+C:\Users\Coryw\Github-Projects\employee-event-engine\Backend-Engine-EEE\obj\Debug\net8.0\Backend-Engine-EEE.csproj.CoreCompileInputs.cache
+C:\Users\Coryw\Github-Projects\employee-event-engine\Backend-Engine-EEE\obj\Debug\net8.0\Backend-Engine-EEE.sourcelink.json
 C:\Users\Coryw\Github-Projects\employee-event-engine\Backend-Engine-EEE\obj\Debug\net8.0\Backend-Engine-EEE.dll
 C:\Users\Coryw\Github-Projects\employee-event-engine\Backend-Engine-EEE\obj\Debug\net8.0\refint\Backend-Engine-EEE.dll
 C:\Users\Coryw\Github-Projects\employee-event-engine\Backend-Engine-EEE\obj\Debug\net8.0\Backend-Engine-EEE.pdb
-C:\Users\Cory\GitHub Projects\employee-event-engine\Backend-Engine-EEE\obj\Debug\net8.0\Backend-Engine-EEE.sourcelink.json
+C:\Users\Coryw\Github-Projects\employee-event-engine\Backend-Engine-EEE\obj\Debug\net8.0\Backend-Engine-EEE.genruntimeconfig.cache
+C:\Users\Coryw\Github-Projects\employee-event-engine\Backend-Engine-EEE\obj\Debug\net8.0\ref\Backend-Engine-EEE.dll

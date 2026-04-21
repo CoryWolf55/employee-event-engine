@@ -12,5 +12,8 @@ namespace Backend_Engine_EEE
         public int EmployeeId { get; set; }
         public string Name { get; set; }
         public string Position { get; set; }
+        public int HourlyRate { get; set;  }
+
+        public Dictionary<string , DateTime> ClockInOutTimes {  get; set; } // ("in" / "out", Time)
     }
 }

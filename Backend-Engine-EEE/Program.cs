@@ -13,31 +13,37 @@ namespace Backend_Engine_EEE
             // the generation of reports on employee hours and attendance.
             bool active = true;
             while(active) {
-            Console.WriteLine("Welcome to the Employee Tracking System!");
-            Console.WriteLine("Please select an option:");
-            Console.WriteLine("1. Admin");
-            Console.WriteLine("2. Employee");
-            Console.WriteLine("3. Exit");
+                Console.WriteLine("Welcome to the Employee Tracking System!");
+                Console.WriteLine("Please select an option:");
+                Console.WriteLine("1. Admin");
+                Console.WriteLine("2. Employee");
+                Console.WriteLine("3. Exit");
 
-            switch (Console.ReadLine())
-            {
-                case "1":
-                    Console.WriteLine("Admin selected.");
+                switch (Console.ReadLine())
+                {
+                    case "1":
+                        Console.WriteLine("Admin selected.");
 
-                    AdminFunc();
-                    break;
-                case "2":
-                    Console.WriteLine("Employee selected.");
-                    EmployeeFunc();
-                    break;
-                case "3":
-                    Console.WriteLine("Exiting the system. Goodbye!");
-                    active = false;
-                    break;
-                default:
-                    Console.WriteLine("Invalid option. Please try again.");
-                    break;
-            }
+                        AdminFunc();
+                        break;
+                    case "2":
+                        Console.WriteLine("Employee selected.");
+                        EmployeeFunc();
+                        break;
+                    case "3":
+                        Console.WriteLine("Exiting the system. Goodbye!");
+                        active = false;
+                        break;
+                    case "4":
+                        foreach(Employee employee in LocalDB.Employees)
+                        {
+                            Console.WriteLine($"ID: {employee.EmployeeId}, Name: {employee.Name}");
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("Invalid option. Please try again.");
+                        break;
+                }
             }
         }
 
@@ -89,6 +95,7 @@ namespace Backend_Engine_EEE
                     Console.WriteLine("Invalid employee ID. Please try again.");
                     return;
                 }
+                EmployeeEdit.EmployeeFunctions(id);
             }
             catch 
             {
@@ -100,7 +107,7 @@ namespace Backend_Engine_EEE
         static bool CheckEmployeeLogin(int Id)
         {
             //Check ID to db
-            Employee employee = LocalDB.Employees.Where(e => e.EmployeeId == Id).FirstOrDefault();
+            Employee employee = LocalDB.Employees.FirstOrDefault(e => e.EmployeeId == Id);
             if (employee == null)
             {
                 return false;
