@@ -13,8 +13,8 @@ namespace Backend_Engine_EEE
         {
             //This is where the admin can set up an employee
             Employee newEmployee = new();
-            newEmployee = CreateEmployeeName(newEmployee);
-            newEmployee = CreateEmployeeID(newEmployee);
+            CreateEmployeeName(newEmployee);
+            CreateEmployeeID(newEmployee);
             LocalDB.Employees.Add(newEmployee);
             Console.WriteLine("Successfully Created Employee");
             ManageEmployee(newEmployee);
@@ -24,7 +24,7 @@ namespace Backend_Engine_EEE
         {
             Console.WriteLine("What is the employees name?");
             string name = Console.ReadLine();
-            if (name == null) 
+            if (String.IsNullOrWhiteSpace(name)) 
             {
                 Console.WriteLine("Invalid Name");
                 SearchEmployee();
@@ -32,7 +32,7 @@ namespace Backend_Engine_EEE
             }
 
             var foundEmployees = LocalDB.Employees.Where(e => e.Name.ToLower() == name.ToLower()).ToList();
-            if (foundEmployees.Count == 0 || foundEmployees == null) 
+            if (foundEmployees.Count == 0) 
             {
                 Console.WriteLine("There were no employees with that name");
                 SearchEmployee();
@@ -70,31 +70,33 @@ namespace Backend_Engine_EEE
         private static void EmployeeClockInOut(Employee e)
         {
             //Check status of last action - Do opposite - Log it
-            if(e.ClockInOutTimes.Count <= 0)
+            if(e.TimeEntries.Count <= 0)
             {
                 ClockIn(e);
                 return;
             }
 
-            var lastEntry = e.ClockInOutTimes.Last();
-            if(lastEntry.Key == "in")
+            var lastEntry = e.TimeEntries.Last();
+            if(lastEntry.Type == ClockType.In)
             {
-                ClockIn(e);
+                ClockOut(e);
                 return;
             }
-            ClockOut(e);
+            ClockIn(e);
 
         }
 
         private static void ClockIn(Employee e)
         {
-            e.ClockInOutTimes.Add("in", DateTime.UtcNow);
-            Console.WriteLine("Successfully clocked in at: " + DateTime.UtcNow);
+            var now = DateTime.UtcNow;
+            e.TimeEntries.Add(new TimeEntry { Type = ClockType.In, Time = now});
+            Console.WriteLine("Successfully clocked in at: " + now);
         }
         private static void ClockOut(Employee e)
         {
-            e.ClockInOutTimes.Add("out", DateTime.UtcNow);
-            Console.WriteLine("Successfully clocked out at: " + DateTime.UtcNow);
+            var now = DateTime.UtcNow;
+            e.TimeEntries.Add(new TimeEntry { Type = ClockType.Out, Time = now });
+            Console.WriteLine("Successfully clocked out at: " + now);
         }
 
         private static Employee FindEmployeeByID(int ID)
@@ -102,13 +104,13 @@ namespace Backend_Engine_EEE
             Employee e = LocalDB.Employees.FirstOrDefault(n => n.EmployeeId == ID);
             if(e == null)
             {
-                return e;
+                Console.WriteLine("Employee not found");
+                return null;
             }
-            Console.WriteLine("Employee not found");
-            return null;
+            return e;
         }
 
-        private static Employee CreateEmployeeName(Employee employee)
+        private static void CreateEmployeeName(Employee employee)
         {
             Console.WriteLine("Please Enter the Employees Name: ");
             try
@@ -117,7 +119,7 @@ namespace Backend_Engine_EEE
                 if (name != null)
                 {
                     employee.Name = name;
-                    return employee;
+                    return;
                 }
             }
             catch
@@ -125,11 +127,11 @@ namespace Backend_Engine_EEE
                 Console.WriteLine("Invalid Name");
                 CreateEmployeeName(employee);
             }
-            return null;
+            return;
         }
 
         private static readonly Random rnd = new Random();
-        private static Employee CreateEmployeeID(Employee employee)
+        private static void CreateEmployeeID(Employee employee)
         {
             var existingIds = LocalDB.Employees.Select(e => e.EmployeeId).ToHashSet();
 
@@ -141,7 +143,7 @@ namespace Backend_Engine_EEE
 
             //Setting it in DB
             employee.EmployeeId = chosenId;
-            return employee;
+            return;
         }
 
 

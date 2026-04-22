@@ -14,6 +14,6 @@ namespace Backend_Engine_EEE
         public string Position { get; set; }
         public int HourlyRate { get; set;  }
 
-        public Dictionary<string , DateTime> ClockInOutTimes {  get; set; } // ("in" / "out", Time)
+        public required List<TimeEntry> TimeEntries { get; set; } = new();
     }
 }
