@@ -23,7 +23,7 @@ namespace Backend_Engine_EEE
         public static void SearchEmployee()
         {
             Console.WriteLine("What is the employees name?");
-            string name = Console.ReadLine();
+            string? name = Console.ReadLine();
             if (String.IsNullOrWhiteSpace(name)) 
             {
                 Console.WriteLine("Invalid Name");
@@ -52,7 +52,8 @@ namespace Backend_Engine_EEE
             Console.WriteLine("1: Clock in/out");
             Console.WriteLine("2: Exit");
 
-            switch(Console.ReadLine())
+            string? input = Console.ReadLine();
+            switch(input)
             {
                 case "1":
                     EmployeeClockInOut(e);
@@ -115,7 +116,7 @@ namespace Backend_Engine_EEE
             Console.WriteLine("Please Enter the Employees Name: ");
             try
             {
-                string name = Console.ReadLine();
+                string? name = Console.ReadLine();
                 if (name != null)
                 {
                     employee.Name = name;
@@ -154,8 +155,8 @@ namespace Backend_Engine_EEE
             Console.WriteLine("1: Check Report");
             Console.WriteLine("2: Offboard Employee");
             Console.WriteLine("3: Exit");
-
-            switch(Console.ReadLine()) {
+            string? input  = Console.ReadLine();
+            switch(input) {
                 case "1": 
                     Console.WriteLine("Getting Report");
                     GrabReport(e);

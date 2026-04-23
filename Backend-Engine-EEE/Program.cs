@@ -56,8 +56,10 @@ namespace Backend_Engine_EEE
             Console.WriteLine("1. Onboard Employee");
             Console.WriteLine("2. Search Employee");
             Console.WriteLine("3. Exit");
-
-            int response = int.Parse(Console.ReadLine());
+            string? input = Console.ReadLine();
+            if (input == null)
+                return;
+            int response = int.Parse(input);
             switch (response)
             {
                 case 1:
@@ -88,8 +90,14 @@ namespace Backend_Engine_EEE
 
             try 
             {
-                int id = int.Parse(Console.ReadLine());
-
+                string? input = Console.ReadLine();
+                if (input == null)
+                {
+                    Console.WriteLine("Invalid Response");
+                    return;
+                }
+                    
+                int id = int.Parse(input);
                 if (!CheckEmployeeLogin(id))
                 {
                     Console.WriteLine("Invalid employee ID. Please try again.");
