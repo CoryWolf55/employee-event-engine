@@ -58,8 +58,12 @@ namespace Backend_Engine_EEE
             Console.WriteLine("3. Exit");
             string? input = Console.ReadLine();
             if (input == null)
+            {
+                Console.WriteLine("Invlid option. Please try again");
                 return;
+            }
             int response = int.Parse(input);
+            
             switch (response)
             {
                 case 1:
@@ -115,7 +119,7 @@ namespace Backend_Engine_EEE
         static bool CheckEmployeeLogin(int Id)
         {
             //Check ID to db
-            Employee employee = LocalDB.Employees.FirstOrDefault(e => e.EmployeeId == Id);
+            Employee? employee = LocalDB.Employees.FirstOrDefault(e => e.EmployeeId == Id);
             if (employee == null)
             {
                 return false;

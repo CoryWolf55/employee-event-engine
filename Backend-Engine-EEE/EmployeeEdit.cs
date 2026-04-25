@@ -20,7 +20,7 @@ namespace Backend_Engine_EEE
             ManageEmployee(newEmployee);
         }
 
-        public static void SearchEmployee()
+        public static Employee SearchEmployee()
         {
             Console.WriteLine("What is the employees name?");
             string? name = Console.ReadLine();
@@ -28,7 +28,7 @@ namespace Backend_Engine_EEE
             {
                 Console.WriteLine("Invalid Name");
                 SearchEmployee();
-                return;
+                return null;
             }
 
             var foundEmployees = LocalDB.Employees.Where(e => e.Name.ToLower() == name.ToLower()).ToList();
@@ -36,8 +36,24 @@ namespace Backend_Engine_EEE
             {
                 Console.WriteLine("There were no employees with that name");
                 SearchEmployee();
-                return;
+                return null;
             }
+
+            foreach (var employee in foundEmployees)
+            {
+                Console.WriteLine(employee.Name + employee.EmployeeId);
+            }
+
+            Console.WriteLine("Please enter the ID of the employee you are selecting");
+
+            string? input = Console.ReadLine();
+            if (String.IsNullOrWhiteSpace(input))
+            {
+                Console.WriteLine("Error with Searchup");
+                return null;
+            }
+            int id = int.Parse(input);
+            return FindEmployeeByID(id);
         }
 
         public static void EmployeeFunctions(int ID)
@@ -180,6 +196,13 @@ namespace Backend_Engine_EEE
         static void GrabReport(Employee e)
         {
             //Returning report for 
+            //For now this will be just returning the clock in and out schedules
+
+            Console.WriteLine("This is the clock times");
+            foreach(var time in e.TimeEntries)
+            {
+                Console.WriteLine(time.ToString());
+            }
         }
 
 
