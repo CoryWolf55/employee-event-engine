@@ -11,6 +11,16 @@ namespace Backend_Engine_EEE
             //1. Create an employee tracking system. This should allow onboarding, offboarding,
             // Clock in, Clock out, and tracking of hours worked. It should also allow for
             // the generation of reports on employee hours and attendance.
+
+            //To-Do
+            //Need to restructure documents
+
+            //Class edit - Only for grabbing and setting data in Data class
+            //Program.cs - Calling various classes/ main
+            //Prompt.cs - Calling inputs and outputs
+            //Services.cs - Used for calculating schedules and other brain activities
+            //LocalDB.cs - Used for interaction with in-memory storage
+
             bool active = true;
             while(active) {
                 Console.WriteLine("Welcome to the Employee Tracking System!");
